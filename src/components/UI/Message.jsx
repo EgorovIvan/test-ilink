@@ -1,29 +1,32 @@
 import React from "react"
 import "./scss/style.scss"
-import vk from "../images/vk.png";
-import icon from "../images/icon.png";
-import twitter from "../images/twitter.png";
+import close from "../images/close.png";
+import success from "../images/success.png";
+import bubbles from "../images/bubbles.png";
 
-const Footer = () => {
+const Message = ({active, setActive}) => {
     return (
-        <div className="wrapper">
-            <div className="footer">
-                <div className="container">
-                    <div className="footer__inner">
-                        <div className="footer__text">
-                            © iLINK ACADEMY. ALL RIGHTS RESERVED. 2022
-                        </div>
-                        <div className="footer__icon-social">
-                            <img src={vk} alt="vk"/>
-                            <img src={icon} alt="icon"/>
-                            <img src={twitter} alt="twitter"/>
-                        </div>
-                    </div>
+        <div className={active ? "message active" : "message"}>
 
+            <div className="message__title">
+                Успешно!
+                <div onClick={() => setActive(false)}>
+                    <img src={close} alt="close"/>
                 </div>
+
+            </div>
+            <div className="message__text">
+                Спасибо за отзыв о нашей компании :)
+            </div>
+            <div className="message__success">
+                <img src={success} alt="success"/>
+            </div>
+
+            <div className="message__bubbles">
+                <img src={bubbles} alt="bubbles"/>
             </div>
         </div>
     )
 }
 
-export default Footer
+export default Message

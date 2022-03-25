@@ -1,4 +1,59 @@
-@import "_global";
-@import "header";
-@import "main";
+@import "vars";
+
+.footer {
+  width: 1440px;
+  height: 64px;
+  margin: 0 auto;
+  padding: 22px 0;
+  background: #F5F5F5;
+  box-sizing: border-box;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__text {
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #8A8A8A;
+  }
+
+  &__icon-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+  }
+}
+
+@media (max-width: 320px)  {
+  .footer {
+    width: 320px;
+    height: 84px;
+    margin: 0 auto;
+    padding: 12px 8px;
+
+    &__inner {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__text {
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    &__icon-social {
+      width: 100px;
+      margin-top: 14px;
+    }
+  }
+}
 

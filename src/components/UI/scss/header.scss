@@ -44,6 +44,15 @@
     color: #333333;
   }
 
+  &__profile-second_name {
+    padding-left: 8px;
+    @extend %title-font-r700;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 18px;
+    color: #333333;
+  }
+
   &__btn {
     width: 227px;
     height: 52px;
@@ -57,12 +66,82 @@
     line-height: 18px;
     color: #FFFFFF;
   }
+
+  &__btn-icon {
+    display: none;
+  }
 }
 
 .logo {
   display: flex;
   flex-direction: column;
   text-align: center;
+
+  &__head {
+    margin-bottom: 8px;
+  }
 }
 
+@media (max-width: 320px)  {
+  .header {
+    width: 320px;
+    height: 77px;
+    padding: 20px 0;
+
+    &__profile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80px;
+    }
+
+    &__profile-photo {
+      width: 36px;
+      max-height: 36px;
+    }
+
+    &__profile-photo img{
+      height: 36px;
+    }
+
+    &__profile-name {
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    &__profile-second_name {
+      display: none;
+    }
+
+    &__btn {
+      width: 36px;
+      height: 36px;
+      margin-left: 44px;
+    }
+
+    &__btn-text {
+      display: none;
+    }
+
+    &__btn-icon {
+      display: block;
+    }
+  }
+
+  .logo {
+
+    &__head {
+      width: 59px;
+      height: auto;
+    }
+
+    &__text {
+      width: 59px;
+      height: auto;
+    }
+  }
+}
 

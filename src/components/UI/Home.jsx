@@ -1,9 +1,17 @@
 import React from "react"
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
+import "./scss/style.scss"
 
-const Header = () => {
+const Home = () => {
     return (
-        <div></div>
+        <div>
+            <Header/>
+            <Main/>
+            <Footer/>
+        </div>
     )
 }
 
-export default Header
+export default Home

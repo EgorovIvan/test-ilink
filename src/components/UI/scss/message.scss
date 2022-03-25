@@ -1,5 +1,90 @@
-@import "_global";
-@import "header";
-@import "main";
-@import "footer";
-@import "modal";
+@import "vars";
+
+.message {
+  position: fixed;
+  bottom: 104px;
+  transform: translateX(220%);
+  width: 438px;
+  height: 132px;
+  padding: 16px 24px 0 120px;
+  background: #B5FFA2;
+  border-radius: 32px;
+  box-sizing: border-box;
+  opacity: 0;
+  z-index: 2;
+
+  &__success img {
+    position: absolute;
+    top: -36px;
+    left: 24px;
+    width: 69px;
+    height: 69px;
+  }
+
+  &__bubbles img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    border-radius: 0 0 0 32px;
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 284px;
+    height: 48px;
+    @extend %title-font-j500;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 38px;
+    color: #333333;
+  }
+
+  &__text {
+    text-align: left;
+    width: 244px;
+    height: 44px;
+    @extend %title-font-r400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #333333;
+  }
+}
+
+.message.active {
+  opacity: 1;
+}
+
+@media (max-width: 320px)  {
+  .message {
+    bottom: 16px;
+    transform: translateX(16px);
+    width: 288px;
+    padding: 25px 22px 0 90px;
+
+    &__success img {
+      top: -30px;
+      left: 20px;
+      width: 56px;
+      height: 56px;
+    }
+
+    &__title {
+      width: 176px;
+      height: 30px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    &__text {
+      width: 176px;
+      height: 44px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
