@@ -1,0 +1,68 @@
+@import "vars";
+
+.header {
+  position: relative;
+  width: 1440px;
+  height: 116px;
+  background: #FFFFFF;
+  margin: 0 auto;
+  padding: 32px 0;
+  box-sizing: border-box;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 183px;
+  }
+
+  &__profile-photo {
+    width: 52px;
+    max-height: 52px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  &__profile-photo img{
+    width: auto;
+    height: 52px;
+    margin: 0 auto;
+  }
+
+  &__profile-name {
+    @extend %title-font-r700;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 18px;
+    color: #333333;
+  }
+
+  &__btn {
+    width: 227px;
+    height: 52px;
+    background: #585CC6;
+    border-radius: 2px;
+    border: none;
+
+    @extend %title-font-r600;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 18px;
+    color: #FFFFFF;
+  }
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
