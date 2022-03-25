@@ -23,6 +23,12 @@ const Main = () => {
     const [change, setChange] =useState('')
     const [modalActive, setModalActive] = useState(false)
     const [messageActive, setMessageActive] = useState(false)
+    const [styleBtnPrev, setStyleBtnPrev] = useState({
+        background: "#E0E0E0"
+    })
+    const [styleBtnNext, setStyleBtnNext] = useState({
+        background: "#EEEEEE"
+    })
 
 
     const reviews = useRef(null)
@@ -61,17 +67,35 @@ const Main = () => {
 
     useEffect(() => {
         if (reviews.current.scrollLeft <= 0) {
-            setStart( [<img src={activeBtn} alt="active"/>])
-            setCenter([<img src={passiveBtn} alt="passive"/>])
-            setEnd([<img src={passiveBtn} alt="passive"/>])
+            setStart ( [<img src={activeBtn} alt="active"/>])
+            setCenter ([<img src={passiveBtn} alt="passive"/>])
+            setEnd ([<img src={passiveBtn} alt="passive"/>])
+            setStyleBtnPrev ({
+                background: "#E0E0E0"
+            })
+            setStyleBtnNext ({
+                background: "#EEEEEE"
+            })
         } else if (reviews.current.scrollLeft > 0 && reviews.current.scrollLeft < sum) {
-            setStart( [<img src={passiveBtn} alt="passive"/>])
-            setCenter([<img src={activeBtn} alt="active"/>])
-            setEnd([<img src={passiveBtn} alt="passive"/>])
+            setStart ( [<img src={passiveBtn} alt="passive"/>])
+            setCenter ([<img src={activeBtn} alt="active"/>])
+            setEnd ([<img src={passiveBtn} alt="passive"/>])
+            setStyleBtnPrev ({
+                background: "#EEEEEE"
+            })
+            setStyleBtnNext ({
+                background: "#EEEEEE"
+            })
         } else {
-            setStart( [<img src={passiveBtn} alt="passive"/>])
-            setCenter([<img src={passiveBtn} alt="passive"/>])
-            setEnd([<img src={activeBtn} alt="active"/>])
+            setStart ( [<img src={passiveBtn} alt="passive"/>])
+            setCenter ([<img src={passiveBtn} alt="passive"/>])
+            setEnd ([<img src={activeBtn} alt="active"/>])
+            setStyleBtnPrev ({
+                background: "#EEEEEE"
+            })
+            setStyleBtnNext ({
+                background: "#E0E0E0"
+            })
         }
 
         setChange( '')
@@ -265,10 +289,10 @@ const Main = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className="reviews__btn" onClick={handlePrev}>
+                        <button className="reviews__btn" onClick={handlePrev} style={styleBtnPrev}>
                             <img src={left} alt="left"/>
                         </button>
-                        <button className="reviews__btn" onClick={handleNext}>
+                        <button className="reviews__btn" onClick={handleNext} style={styleBtnNext}>
                             <img src={right} alt="right"/>
                         </button>
                     </div>
